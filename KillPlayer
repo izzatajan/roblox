@@ -1,0 +1,11 @@
+local Fire = game.Workspace.Fire
+
+function KillThePlayer(hit)
+	local character = hit.Parent
+	local player = game.Players:GetPlayerFromCharacter(character)
+	if player then
+		player.Character.Humanoid.Health = 0
+	end
+end
+
+Fire.Touched:Connect(KillThePlayer)
